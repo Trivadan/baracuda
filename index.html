@@ -1,0 +1,625 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baracuda</title>
+
+<!---Favicon--->
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+<!---Css--->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/datepicker.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<!---Javascript--->
+<script type="text/javascript" src="js/googleapis.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+</head>
+
+<body>
+<!--Top header-->
+<header class="topheader">
+  <div class="container">
+    <div class="align-left toplink"></div>
+    <div class="align-right">
+      <div class="searchbutton">
+        <div id="sb-search" class="sb-search " >     
+          <form>
+            <input class="sb-search-input " onkeyup="buttonUp();" placeholder="I'm searching for..." onblur="monkey();" type="search" value="" name="search" id="search">
+            <input class="sb-search-submit" type="submit"  value="">
+            <span class="sb-icon-search"><i class="fa fa-search"></i></span>     
+          </form>
+        </div>
+      </div>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-menu1">
+          <ul class="navigation">
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="loancalculator.html">Faqs</a></li>
+            <li><a href="contacts.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!--Main header-->
+<header class="mainheader">
+  <div class="container">
+  <div class="row">
+    <div class="align-left logoarea"> <a href="index.html"><img src="images/baracuda_logo.png" alt="Baracuda Airlines" /></a> </div>
+    <div class="align-left mainmenu"> </div>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu2"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div class="collapse navbar-collapse" id="nav-menu2">
+        <ul class="navigation">
+          <li class="active"><a href="index.html">Home</a> </li>
+          <li><a href="bookflight.html">Book a flight</a></li>
+          <li><a href="managebooking.html">Manage Booking</a></li>
+          <li><a href="destination.html">Destination</a></li>
+          <li><a href="offers.html">Special Offer</a></li>
+          <li><a href="onboard.html"> Onboard Faqs</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  </div>
+  </div>
+</header>
+
+<!--Main Slider-->
+<section class="mainslider">
+  <ul class="bxslider">
+    <li><img src="images/baracuda_banner.jpg" alt="Baracuda Airlines" /> </li>
+    <li><img src="images/baracuda_banner2.jpg" alt="Baracuda Airlines" /> </li>
+    <li><img src="images/baracuda_banner.jpg" alt="Baracuda Airlines" /> </li>
+    <li><img src="images/baracuda_banner2.jpg" alt="Baracuda Airlines" /> </li>
+  </ul>
+  <div class="tab-area"> 
+    
+    <!-- tabs -->
+    <div class="sky-tabs sky-tabs-pos-right sky-tabs-anim-flip sky-tabs-response-to-icons">
+      <input type="radio" name="sky-tabs" checked id="sky-tab1" class="sky-tab-content-1">
+      <label for="sky-tab1"><span><span><i class="fa fa-plane"></i>Book a flight</span></span></label>
+      <input type="radio" name="sky-tabs" id="sky-tab2" class="sky-tab-content-2">
+      <label for="sky-tab2"><span><span><i class="fa fa-bed"></i>Find Hotels and Cars</span></span></label>
+      <input type="radio" name="sky-tabs" id="sky-tab3" class="sky-tab-content-3">
+      <label for="sky-tab3"><span><span><i class="fa fa-th"></i>Manage Booking</span></span></label>
+      <input type="radio" name="sky-tabs" id="sky-tab4" class="sky-tab-content-4">
+      <label for="sky-tab4"><span><span><i class="fa fa-briefcase"></i>Check-in Online</span></span></label>
+      <input type="radio" name="sky-tabs" id="sky-tab5" class="sky-tab-content-5">
+      <label for="sky-tab5"><span><span><i class="fa fa-clock-o"></i>Flight Status</span></span></label>
+      <input type="radio" name="sky-tabs" id="sky-tab6" class="sky-tab-content-6">
+      <label for="sky-tab6"><span><span><i class="fa fa-calendar-check-o"></i>Time Table Search</span></span></label>
+      <ul>
+        <li class="sky-tab-content-1">
+          <div class="typography">
+            <h1>Book a flight</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <div class="alignleft wayarea"> <span id="booking_buttons" class="booking_buttons">
+                    <input id="return" type="radio" name="Booking" value="R" checked="checked">
+                    <label> Return </label>
+                    <input id="oneway" type="radio" name="Booking" value="O">
+                    <label > One Way </label>
+                    <input id="mutiplydestination" type="radio" name="Booking" value="M">
+                    <label> Multiple Destinations </label>
+                    </span> </div>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>From</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namedepature" name="name" class="form-control" type="text" placeholder="Depature City">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Depature Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-from" name="date-from" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <label>Adult + 12yrs</label>
+                          <div class="addon-left"> <i class="fa fa-user innericon"></i>
+                            <select id="children" name="children" class="form-control">
+                              <option value="-">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <label>Child 2 - 11 yrs</label>
+                          <div class="addon-left"> <i class="fa fa-child innericon"></i>
+                            <select id="children" name="children" class="form-control">
+                              <option value="-">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <label>Infant < 2 yrs</label>
+                          <div class="addon-left"> <i class="fa fa-child innericon"></i>
+                            <select id="children" name="children" class="form-control">
+                              <option value="-">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>To</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namearrival" name="name" class="form-control" type="text" placeholder="Arrival city">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Return Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-to" name="date-to" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Class</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <select id="adults" name="adults" class="form-control">
+                          <option value="1">Economy Class</option>
+                          <option value="2">Business Class</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Submit"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li class="sky-tab-content-2">
+          <div class="typography">
+            <h1>Find Hotels and Cars</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <div class="alignleft wayarea"> <span id="booking_buttons" class="booking_buttons">
+                    <input id="return" type="radio" name="Booking" value="R" checked="checked">
+                    <label> Hotels </label>
+                    <input id="oneway" type="radio" name="Booking" value="O">
+                    <label > Cars </label>
+                    </span> </div>
+                  <aside class="formlarge">
+                    <div class="group">
+                      <label>Destination/Hotel or Property Name:</label>
+                      <div class="addon-left"> <i class="fa fa-search innericon"></i>
+                        <input id="namedepature" name="text" class="form-control" type="text" placeholder="Search City">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>Check-in</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-from" name="date-from" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>Check-out</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-to" name="date-to" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Search"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li class="sky-tab-content-3">
+          <div class="typography">
+            <h1>Manage Booking</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <p>To access an existing booking, please enter your last name and booking reference below. You can review or change your flight details, upgrade with Skywards Miles or cash, make or change requests and add specific services.</p>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>Last Name</label>
+                      <div class="addon-left"> <i class="fa fa-user"></i>
+                        <input id="namedepature" name="text" class="form-control" type="text" placeholder="Enter last Name">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>Booking Refrence</label>
+                      <div class="addon-left"> <i class="fa fa-briefcase"></i>
+                        <input id="namedepature" name="text" class="form-control" type="text" placeholder="Refrence Number">
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Find Booking"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li class="sky-tab-content-4">
+          <div class="typography">
+            <h1>Check-in Online</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <p>To access an existing booking, please enter your last name and booking reference below. You can review or change your flight details, upgrade with Skywards Miles or cash, make or change requests and add specific services.</p>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>Last Name</label>
+                      <div class="addon-left"> <i class="fa fa-user"></i>
+                        <input id="namedepature" name="text" class="form-control" type="text" placeholder="Enter last Name">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>Booking Refrence</label>
+                      <div class="addon-left"> <i class="fa fa-briefcase"></i>
+                        <input id="namedepature" name="text" class="form-control" type="text" placeholder="Refrence Number">
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Check-in"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li class="sky-tab-content-5">
+          <div class="typography">
+            <h1>Flight Status</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <div class="alignleft wayarea"> <span id="booking_buttons" class="booking_buttons">
+                    <input id="return" type="radio" name="Booking" value="R" checked="checked">
+                    <label> Flight Route </label>
+                    <input id="oneway" type="radio" name="Booking" value="O">
+                    <label > Flight Number </label>
+                    </span> </div>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>From</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namedepature" name="name" class="form-control" type="text" placeholder="Depature City">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Depature Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-from" name="date-from" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>To</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namearrival" name="name" class="form-control" type="text" placeholder="Arrival city">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Return Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-to" name="date-to" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Check Status"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+        <li class="sky-tab-content-6">
+          <div class="typography">
+            <h1>Time Table Search</h1>
+            <form id="booking-form" class="booking-form" name="form1" method="post" action="">
+              <div class="row">
+                <div id="form-message" class="message hide"> Thank you for your enquiry! </div>
+                <div id="form-content">
+                  <div class="alignleft wayarea"> <span id="booking_buttons" class="booking_buttons">
+                    <input id="return" type="radio" name="Booking" value="R" checked="checked">
+                    <label> Return </label>
+                    <input id="oneway" type="radio" name="Booking" value="O">
+                    <label > One Way </label>
+                    </span> </div>
+                  <aside class="alignleft formleft">
+                    <div class="group">
+                      <label>From</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namedepature" name="name" class="form-control" type="text" placeholder="Depature City">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Depature Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-from" name="date-from" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                  </aside>
+                  <aside class="alignleft formright">
+                    <div class="group">
+                      <label>To</label>
+                      <div class="addon-left"> <i class="fa fa-plane innericon"></i>
+                        <input id="namearrival" name="name" class="form-control" type="text" placeholder="Arrival city">
+                      </div>
+                    </div>
+                    <div class="group">
+                      <label>Return Date</label>
+                      <div class="addon-left"> <i class="fa fa-calendar"></i>
+                        <input id="date-to" name="date-to" class="form-control date-picker" placeholder="DD/MM/YYYY" type="text">
+                      </div>
+                    </div>
+                    <div class="group submit">
+                      <label class="empty"></label>
+                      <div>
+                        <input name="submit" type="submit" value="Timetable Search"/>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--/ tabs --> 
+    
+  </div>
+</section>
+
+<!--Main Top Content-->
+<section class="topmain_cont">
+  <div class="container">
+    <div class="row">
+      <h1><span>News:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+      <a href="contacts.html">Contact Us</a></div>
+  </div>
+</section>
+
+<!--Main Middle Content-->
+<section class="middlemain_cont">
+  <div class="container">
+    <div class="row">
+    <div class="top-title">
+      <h2>Highlights</h2>
+    </div>
+      <div class="col-xs-6 highlight_col col-sm-3">
+        <div class="itemhighlight">
+          <div class="iconarea"><img src="images/highlightpic.jpg" alt="Baracuda Airlines" /></div>
+          <h2>Dubai</h2>
+          <p>L'orem ipsum dolor sitamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
+          <a href="#">Offer Details</a> </div>
+      </div>
+      <div class="col-xs-6 highlight_col col-sm-3">
+        <div class="itemhighlight">
+          <div class="iconarea"><img src="images/highlightpic2.jpg" alt="Baracuda Airlines" /></div>
+          <h2>Nairobi</h2>
+          <p>L'orem ipsum dolor sitamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
+          <a href="#">Offer Details</a> </div>
+      </div>
+      <div class="col-xs-6 highlight_col col-sm-3">
+        <div class="itemhighlight">
+          <div class="iconarea"><img src="images/highlightpic3.jpg" alt="Baracuda Airlines" /></div>
+          <h2>Kampala</h2>
+          <p>L'orem ipsum dolor sitamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
+          <a href="#">Offer Details</a> </div>
+      </div>
+      <div class="col-xs-6 highlight_col col-sm-3">
+        <div class="itemhighlight">
+          <div class="iconarea"><img src="images/highlightpic.jpg" alt="Baracuda Airlines" /></div>
+          <h2>Entebbe</h2>
+          <p>L'orem ipsum dolor sitamet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...</p>
+          <a href="#">Offer Details</a> </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="social-widget">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 social-widgetblock">
+        <div class="homevideo">
+          <h1 class="wid-title">Watch Us on Youtube</h1>
+          <a href="#"><img src="images/videopic.jpg" alt="Baracuda Airlines" /></a> </div>
+      </div>
+      <div class="col-sm-4 social-widgetblock">
+        <h1 class="wid-title">Join us on Facebook</h1>
+        <div class="facebook_widget">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdunstuns%2F&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+        </div>
+      </div>
+      <div class="col-sm-4 social-widgetblock">
+        <h1 class="wid-title">Join the conversation</h1>
+        <div  class="bt-twitter" > <a class="twitter-timeline" data-dnt="true" width="100%" height="300" data-theme="true" href="https://twitter.com/cfcdproject" data-widget-id="662375775220465665">Tweets by @cfcdproject</a> 
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<footer class="mainfooter">
+  <div class="container">
+    <div class="row">
+      <div class="footer_cont">
+        <div class="col-xs-6 col-sm-3">
+          <h1>Travel Information</h1>
+          <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="bookflight.html">Book a flight</a></li>
+            <li><a href="managebooking.html">Manage Booking</a></li>
+            <li><a href="destination.html">Destination</a></li>
+            <li><a href="offers.html">Special Offer</a></li>
+            <li><a href="onboard.html"> Onboard Faqs</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <h1>Quick Links</h1>
+          <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="bookflight.html">Book a flight</a></li>
+            <li><a href="managebooking.html">Manage Booking</a></li>
+            <li><a href="destination.html">Destination</a></li>
+            <li><a href="offers.html">Special Offer</a></li>
+            <li><a href="onboard.html"> Onboard Faqs</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <h1>Travel Experience</h1>
+          <ul>
+            <li><a href="index.html">Economy class</a> </li>
+            <li><a href="bookflight.html">Business Class</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <h1>Online Services</h1>
+          <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="bookflight.html">Book a flight</a></li>
+            <li><a href="managebooking.html">Manage Booking</a></li>
+            <li><a href="destination.html">Destination</a></li>
+            <li><a href="offers.html">Special Offer</a></li>
+            <li><a href="onboard.html"> Onboard Faqs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+      <footer class="bottomfooter">
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-12 col-sm-8">
+      <p>&copy; Copyrights 2016 Baracuda. All rights reserved.</p>
+      
+      </div>
+      <div class="col-xs-6 col-sm-4">
+                <div class="social-menu">
+              <li><a href="http://facebook.com">Facebook</a></li>
+              <li><a href="http://plus.google.com">Google Plus</a></li>
+              <li><a href="http://twitter.com">Twitter</a></li>
+              <li><a href="http://youtube.com">Youtube</a></li>
+          </div>
+          </div>
+      </div>
+      </div>
+       </footer>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script> 
+<script type="text/javascript" src="js/uisearch.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.bxslider').bxSlider({
+	mode: 'fade',
+	controls: false,
+	pager:false
+});
+});
+</script> 
+<script>
+$( document ).ready(function() {
+	$('#date-from').datepicker({
+		format: 'mm-dd-yyyy',
+	});
+	$('#date-to').datepicker();		
+	
+	$('.date-picker').datepicker().on('changeDate',function(e) {
+	$('.date-picker').datepicker('hide');
+	});
+				
+
+// disabling dates
+var nowTemp = new Date();
+var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+var checkin = $('#date-from').datepicker({
+  onRender: function(date) {
+	return date.valueOf() < now.valueOf() ? 'disabled' : '';
+  }
+}).on('changeDate', function(ev) {
+  if (ev.date.valueOf() > checkout.date.valueOf()) {
+	var newDate = new Date(ev.date)
+	newDate.setDate(newDate.getDate() + 1);
+	checkout.setValue(newDate);
+  }
+  checkin.hide();
+  $('#date-to')[0].focus();
+}).data('datepicker');
+var checkout = $('#dpd2').datepicker({
+  onRender: function(date) {
+	return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+  }
+}).on('changeDate', function(ev) {
+  checkout.hide();
+}).data('datepicker');
+});
+</script>
+</body>
+</html>
